@@ -1,0 +1,24 @@
+.Forecast .emoji {
+  color: #eebcf4;
+  font-size: x-large;
+}
+
+.Forecast.forecastEmoji {
+  font-size: large;
+}
+.Forecast.col {
+  position: relative;
+  border: 1px solid
+    radial-gradient(
+      329px at 3.1% 9.3%,
+      rgb(251, 204, 235) 28.1%,
+      rgba(221, 221, 221, 0.15) 100.7%
+    );
+  margin: 10px;
+}
+
+.Forecast .temp {
+  color: rgb(172, 134, 241);
+  position: relative;
+  left: -10px;
+}

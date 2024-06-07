@@ -2,7 +2,11 @@ import React from "react";
 
 import Current from "./Current";
 import Form from "./Form";
+import Forecast from "./Forecast";
 import "./App.css";
+import "./Form.css";
+import "./Current.css";
+import "./Forecast.css";
 
 function App() {
   return (
@@ -13,6 +17,15 @@ function App() {
         <div className="square">
           <Form />
           <Current />
+          <Forecast />
+          <div className="Footer">
+            <footer>
+              <a href="https://github.com/selinatisha/SheCodesPlus-Project">
+                Open-source code
+              </a>
+              by Selina Andersson
+            </footer>
+          </div>
         </div>
         <script src="index.js"></script>
       </body>
