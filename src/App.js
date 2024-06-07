@@ -1,5 +1,6 @@
 import React from "react";
 
+import Current from "./Current";
 import Form from "./Form";
 import "./App.css";
 
@@ -11,6 +12,7 @@ function App() {
       <body>
         <div className="square">
           <Form />
+          <Current />
         </div>
         <script src="index.js"></script>
       </body>
