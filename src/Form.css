@@ -1,0 +1,22 @@
+.Form .form {
+  text-align: center;
+  margin: 50px 300px 50px 300px;
+  list-style: i;
+}
+.Form .form-control {
+  border: 1px solid #f5dcf8;
+  background-color: #f5dcf8;
+  width: 50%;
+}
+
+.Form button {
+  color: #ffff;
+  border: 1px solid rgb(246, 191, 248);
+  background-color: rgb(246, 191, 248);
+}
+.Form button:hover {
+  cursor: pointer;
+  color: #ffff;
+  border: #f3d3f8;
+  background: #f3d3f8;
+}
