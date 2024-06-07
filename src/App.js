@@ -20,7 +20,7 @@ function App() {
           <Forecast />
           <div className="Footer">
             <footer>
-              <a href="https://github.com/selinatisha/SheCodesPlus-Project">
+              <a href="https://github.com/selinatisha/react-weather-app">
                 Open-source code
               </a>
               by Selina Andersson
