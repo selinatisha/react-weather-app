@@ -5,11 +5,7 @@ import Forecast from "./Forecast";
 
 export default function Form(props) {
   let [inputValue, setInputValue] = useState("");
-  let [temperature, setTemperature] = useState(null);
-  let [description, setDescription] = useState(null);
-  let [humidity, setHumidity] = useState(null);
-  let [wind, setWind] = useState(null);
-  let [iconUrl, setIconUrl] = useState(null);
+  let [weatherData, setWeatherData] = useState({});
   let [city, setCity] = useState(null);
   let [searchMade, setSearchMade] = useState(false);
 
@@ -26,11 +22,14 @@ export default function Form(props) {
   }
 
   function showTemp(response) {
-    setTemperature(`${Math.round(response.data.temperature.current)}`);
-    setDescription(`Description: ${response.data.condition.description}`);
-    setHumidity(`Humidity: ${Math.round(response.data.temperature.humidity)}%`);
-    setWind(`Wind: ${response.data.wind.speed}km/h`);
-    setIconUrl(response.data.condition.icon_url);
+    console.log(response.data);
+    setWeatherData({
+      temperature: `${Math.round(response.data.temperature.current)}°`,
+      description: response.data.condition.description,
+      humidity: `Humidity: ${Math.round(response.data.temperature.humidity)}%`,
+      wind: `Wind: ${response.data.wind.speed}km/h`,
+      iconUrl: response.data.condition.icon_url,
+    });
     setSearchMade(true);
     setInputValue("");
   }
@@ -83,14 +82,7 @@ export default function Form(props) {
 
       {searchMade && (
         <div className="forecastSection">
-          <Current
-            temperature={temperature}
-            city={city}
-            description={description}
-            humidity={humidity}
-            wind={wind}
-            iconUrl={iconUrl}
-          />
+          <Current weatherData={weatherData} city={city} />
           <Forecast />
         </div>
       )}

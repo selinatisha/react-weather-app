@@ -2,25 +2,14 @@
   font-family: sans-serif;
   text-align: center;
 }
-.body {
-  background: #f9eefa;
-}
+
 .square {
   box-shadow: 10px 10px 8px #c8c6c6;
   border-radius: 10px;
-  background: linear-gradient(
-    179.4deg,
-    rgb(253, 240, 233) 2.2%,
-    rgb(255, 194, 203) 96.2%
-  );
+  background-color: #ffff;
   margin: 0 auto;
   margin-top: 50px;
-  border: 1px solid
-    linear-gradient(
-      44.8deg,
-      rgba(255, 136, 102, 0.67) -53.1%,
-      rgba(255, 221, 136, 0.28) 49%
-    );
+  border: 1px solid #ffff;
   padding: 20px 30px 20px 30px;
   max-width: 650px;
   min-width: 600px;

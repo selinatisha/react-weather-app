@@ -1,20 +1,18 @@
 import React from "react";
-export default function Current({
-  temperature,
-  city,
-  description,
-  humidity,
-  wind,
-  iconUrl,
-}) {
+export default function Current({ weatherData, city }) {
   return (
     <section className="current">
       <ul className="today">
         <div className="image">
-          <img src={iconUrl} className="sun" id="WeatherIcon" alt="" />
+          <img
+            src={weatherData.iconUrl}
+            className="sun"
+            id="WeatherIcon"
+            alt=""
+          />
         </div>
         <li className="first" id="current-temp">
-          {temperature} °C
+          {weatherData.temperature}C
         </li>
 
         <li className="third" id="current-city">
@@ -25,13 +23,13 @@ export default function Current({
         </li>
         <ul className="today2">
           <li className="description" id="temperature-description">
-            {description}
+            {weatherData.description}
           </li>
           <li className="humid" id="humidForecast">
-            {humidity}
+            {weatherData.humidity}
           </li>
           <li className="windSpeed" id="Wind">
-            {wind}
+            {weatherData.wind}
           </li>
         </ul>
       </ul>
