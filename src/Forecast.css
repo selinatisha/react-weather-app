@@ -1,24 +1,25 @@
 .Forecast .emoji {
-  color: #eebcf4;
+  color: #e050f4;
   font-size: x-large;
 }
 
-.Forecast.forecastEmoji {
+.Forecast .forecastEmoji {
   font-size: large;
 }
-.Forecast.col {
+
+.Forecast .col {
   position: relative;
-  border: 1px solid
-    radial-gradient(
-      329px at 3.1% 9.3%,
-      rgb(251, 204, 235) 28.1%,
-      rgba(221, 221, 221, 0.15) 100.7%
-    );
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f3e0fa;
   margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .Forecast .temp {
-  color: rgb(172, 134, 241);
+  color: #e050f4;
   position: relative;
   left: -10px;
+  font-size: 20px;
 }

@@ -1,22 +1,33 @@
-.Form .form {
+.Form {
   text-align: center;
-  margin: 50px 300px 50px 300px;
-  list-style: i;
+  margin: 50px auto;
 }
+
+.Form .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Form .form-control {
-  border: 1px solid #f5dcf8;
-  background-color: #f5dcf8;
+  border: 1px solid #f3e0fa;
+  background-color: #f1e0f2;
   width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .Form button {
-  color: #ffff;
-  border: 1px solid rgb(246, 191, 248);
-  background-color: rgb(246, 191, 248);
+  color: white;
+  border: none;
+  background-color: #f3e0fa;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
 }
+
 .Form button:hover {
   cursor: pointer;
-  color: #ffff;
-  border: #f3d3f8;
-  background: #f3d3f8;
+  background-color: #f27af6;
 }

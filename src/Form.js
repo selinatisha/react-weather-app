@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Current from "./Current";
 import Forecast from "./Forecast";
+import "./Form.css";
 
 export default function Form(props) {
   let [inputValue, setInputValue] = useState("");
@@ -15,6 +16,7 @@ export default function Form(props) {
     setCity(city);
     updateInput(city);
   }
+
   function updateInput(city) {
     let key = `528fa09953b7eb5b52fb10a3t4oae266`;
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
@@ -28,6 +30,7 @@ export default function Form(props) {
       description: response.data.condition.description,
       humidity: `Humidity: ${Math.round(response.data.temperature.humidity)}%`,
       wind: `Wind: ${response.data.wind.speed}km/h`,
+      date: new Date(response.data.time * 1000),
       iconUrl: response.data.condition.icon_url,
     });
     setSearchMade(true);
@@ -42,42 +45,28 @@ export default function Form(props) {
   return (
     <div className="square">
       <div className="Form">
-        <div className="row g-3 align-items-center">
-          <div className="col-auto">
-            <label for="inputPassword6" className="col-form-label"></label>
-          </div>
-          <div className="col-auto">
-            <input
-              placeholder="Enter City"
-              type="text"
-              id="inputCity"
-              value={inputValue}
-              onChange={handleChange}
-              className="form-control"
-              aria-describedby="passwordHelpInline"
-            />
-          </div>
-          <div className="col-auto">
-            <span id="passwordHelpInline" className="form-text">
-              {" "}
-            </span>
-          </div>
+        <div className="form-group">
+          <input
+            placeholder="Enter City"
+            type="text"
+            id="inputCity"
+            value={inputValue}
+            onChange={handleChange}
+            className="form-control"
+            aria-describedby="passwordHelpInline"
+          />
+          <button
+            type="button"
+            className="btn"
+            id="search-button"
+            onClick={handleClick}
+          >
+            Search
+          </button>
+          <button type="button" className="btn" id="current-location-button">
+            📍
+          </button>
         </div>
-        <button
-          type="button"
-          className="btn btn-danger"
-          id="search-button"
-          onClick={handleClick}
-        >
-          Search
-        </button>
-        <button
-          type="button"
-          className="btn btn-info"
-          id="current-location-button"
-        >
-          📍{" "}
-        </button>
       </div>
 
       {searchMade && (
