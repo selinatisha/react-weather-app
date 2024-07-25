@@ -20,21 +20,21 @@ export default function Current({ weatherData, city }) {
           <li className="first" id="current-temp">
             {weatherData.temperature}C
           </li>
+          <ul className="today2">
+            <li className="description" id="temperature-description">
+              {weatherData.description}
+            </li>
+            <li className="humid" id="humidForecast">
+              <span>
+                {weatherData.humidity}
+                {weatherData.wind}
+              </span>
+            </li>
+          </ul>
         </div>
         <li className="second" id="current-date">
           <CurrentDay date={weatherData.date} />
         </li>
-        <ul className="today2">
-          <li className="description" id="temperature-description">
-            {weatherData.description}
-          </li>
-          <li className="humid" id="humidForecast">
-            {weatherData.humidity}
-          </li>
-          <li className="windSpeed" id="Wind">
-            {weatherData.wind}
-          </li>
-        </ul>
       </div>
     </section>
   );

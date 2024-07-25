@@ -29,7 +29,7 @@ export default function Form(props) {
       temperature: `${Math.round(response.data.temperature.current)}°`,
       description: response.data.condition.description,
       humidity: `Humidity: ${Math.round(response.data.temperature.humidity)}%`,
-      wind: `Wind: ${response.data.wind.speed}km/h`,
+      wind: ` Wind: ${response.data.wind.speed}km/h`,
       date: new Date(response.data.time * 1000),
       iconUrl: response.data.condition.icon_url,
     });
