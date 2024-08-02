@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function WeatherForecastDay(props) {
   function maxTemperature() {
@@ -26,7 +26,6 @@ export default function WeatherForecastDay(props) {
         alt=""
         size={36}
       />
-
       <div className="temp">
         <span className="forecast-temperature-max">{maxTemperature()}° </span>/
         <span className="forecast-temperature-min"> {minTemperature()}°</span>

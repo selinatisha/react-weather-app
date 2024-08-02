@@ -7,6 +7,7 @@ import "./Form.css";
 export default function Form(props) {
   let [inputValue, setInputValue] = useState("");
   let [weatherData, setWeatherData] = useState({});
+  let [forecastData, setForecastData] = useState(null); // Add state for forecast data
   let [city, setCity] = useState(null);
   let [searchMade, setSearchMade] = useState(false);
 
@@ -19,12 +20,14 @@ export default function Form(props) {
 
   function updateInput(city) {
     let key = `528fa09953b7eb5b52fb10a3t4oae266`;
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
-    axios.get(url).then(showTemp);
+    let currentWeatherUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
+    let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+
+    axios.get(currentWeatherUrl).then(showTemp);
+    axios.get(forecastUrl).then(showForecast);
   }
 
   function showTemp(response) {
-    console.log(response.data);
     setWeatherData({
       temperature: `${Math.round(response.data.temperature.current)}°`,
       description: response.data.condition.description,
@@ -35,6 +38,10 @@ export default function Form(props) {
     });
     setSearchMade(true);
     setInputValue("");
+  }
+
+  function showForecast(response) {
+    setForecastData(response.data.daily);
   }
 
   function handleChange(event) {
@@ -72,7 +79,8 @@ export default function Form(props) {
       {searchMade && (
         <div className="forecastSection">
           <Current weatherData={weatherData} city={city} />
-          <Forecast city={city} />
+          {forecastData && <Forecast forecastData={forecastData} />}{" "}
+          {/* Pass forecast data */}
         </div>
       )}
 
