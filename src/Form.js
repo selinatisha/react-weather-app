@@ -72,7 +72,7 @@ export default function Form(props) {
       {searchMade && (
         <div className="forecastSection">
           <Current weatherData={weatherData} city={city} />
-          <Forecast />
+          <Forecast city={city} />
         </div>
       )}
 

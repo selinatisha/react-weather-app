@@ -20,7 +20,7 @@
 }
 
 .current li {
-  color: #ffffff;
+  color: #f77ad2;
   text-transform: capitalize;
   position: relative;
   text-align: center;
@@ -40,10 +40,10 @@
 }
 
 .current .third {
-  font-size: 24px;
+  font-size: 50px;
   font-weight: bold;
   text-transform: capitalize;
-  color: #ffffff;
+  color: #f77ad2;
 }
 
 .current ul {

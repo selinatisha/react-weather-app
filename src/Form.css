@@ -1,6 +1,6 @@
 .Form {
   text-align: center;
-  margin: 50px auto;
+  margin: 10px auto;
 }
 
 .Form .form-group {
@@ -10,11 +10,11 @@
 }
 
 .Form .form-control {
-  border: 1px solid #f6bfff;
+  border: 1px solid #fbdeff;
   background-color: #f3e0fa;
   width: 50%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-right: 10px;
 }
 
@@ -23,7 +23,7 @@
   border: none;
   background-color: #f3e0fa;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 50px;
   margin: 5px;
 }
 

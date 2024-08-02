@@ -7,6 +7,9 @@ export default function Current({ weatherData, city }) {
         <li className="third" id="current-city">
           {city}
         </li>
+        <li className="second" id="current-date">
+          <CurrentDay date={weatherData.date} />
+        </li>
         <div className="main-info">
           <div className="image">
             <img
@@ -15,15 +18,15 @@ export default function Current({ weatherData, city }) {
               id="WeatherIcon"
               alt=""
             />
+            <li className="description" id="temperature-description">
+              {weatherData.description}
+            </li>
           </div>
 
           <li className="first" id="current-temp">
             {weatherData.temperature}C
           </li>
           <ul className="today2">
-            <li className="description" id="temperature-description">
-              {weatherData.description}
-            </li>
             <li className="humid" id="humidForecast">
               <span>
                 {weatherData.humidity}
@@ -32,9 +35,6 @@ export default function Current({ weatherData, city }) {
             </li>
           </ul>
         </div>
-        <li className="second" id="current-date">
-          <CurrentDay date={weatherData.date} />
-        </li>
       </div>
     </section>
   );
