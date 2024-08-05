@@ -107,8 +107,7 @@ export default function Form(props) {
       {searchMade && (
         <div className="forecastSection">
           <Current weatherData={weatherData} city={city} />
-          {forecastData && <Forecast forecastData={forecastData} />}{" "}
-          {/* Pass forecast data */}
+          {forecastData && <Forecast forecastData={forecastData} />}
         </div>
       )}
 

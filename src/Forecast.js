@@ -6,7 +6,7 @@ export default function Forecast({ forecastData }) {
     <div className="Forecast">
       <div className="weather-forecast" id="forecast">
         <div className="row align-items-start">
-          {forecastData.map((dailyForecast, index) => {
+          {forecastData.map((dailyForecast, index) => { /*Displays 5 days of forecast */
             if (index < 5) {
               return (
                 <div className="col" key={index}>

@@ -25,7 +25,7 @@
 
 .Forecast .col:hover {
   transform: scale(1.1); /* Slightly increases the size on hover */
-  background-color: #f7eefd; /* Change background color on hover */
+  background-color: #f7eefd;
 }
 
 .Forecast .row {
