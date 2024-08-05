@@ -14,10 +14,10 @@
   width: 18%;
   box-sizing: border-box;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(254, 196, 250, 0.1);
   border-radius: 40px;
   background-color: #f3e0fa;
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, background-color 0.2s; /* transition for hover effects */
@@ -25,7 +25,7 @@
 
 .Forecast .col:hover {
   transform: scale(1.1); /* Slightly increases the size on hover */
-  background-color: #e0c0f3; /* Change background color on hover */
+  background-color: #f7eefd; /* Change background color on hover */
 }
 
 .Forecast .row {
@@ -46,6 +46,4 @@
 .Forecast .temp {
   color: #f28fff;
   position: relative;
-  left: -10px;
-  font-size: 16px;
 }

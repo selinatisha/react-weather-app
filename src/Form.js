@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Current from "./Current";
 import Forecast from "./Forecast";
 import "./Form.css";
@@ -7,9 +9,14 @@ import "./Form.css";
 export default function Form(props) {
   let [inputValue, setInputValue] = useState("");
   let [weatherData, setWeatherData] = useState({});
-  let [forecastData, setForecastData] = useState(null); // Add state for forecast data
+  let [forecastData, setForecastData] = useState(null);
   let [city, setCity] = useState(null);
   let [searchMade, setSearchMade] = useState(false);
+
+  function retreiveClick(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(getCoords);
+  }
 
   function handleClick(event) {
     event.preventDefault();
@@ -43,6 +50,22 @@ export default function Form(props) {
   function showForecast(response) {
     setForecastData(response.data.daily);
   }
+  function getCoords(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let key = `528fa09953b7eb5b52fb10a3t4oae266`;
+    let currentWeatherUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=metric`;
+    let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${key}&units=metric`;
+
+    axios.get(currentWeatherUrl).then(showTemp);
+    axios.get(forecastUrl).then(showForecast);
+
+    let reverseGeocodeUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
+    axios.get(reverseGeocodeUrl).then(showCity);
+  }
+  function showCity(response) {
+    setCity(response.data.city || response.data.locality || "Unknown location");
+  }
 
   function handleChange(event) {
     event.preventDefault();
@@ -68,9 +91,14 @@ export default function Form(props) {
             id="search-button"
             onClick={handleClick}
           >
-            Search
+            <FontAwesomeIcon icon={faSearch} />
           </button>
-          <button type="button" className="btn" id="current-location-button">
+          <button
+            type="button"
+            className="btn"
+            id="current-location-button"
+            onClick={retreiveClick}
+          >
             📍
           </button>
         </div>
@@ -86,10 +114,14 @@ export default function Form(props) {
 
       <div className="Footer">
         <footer>
-          <a href="https://github.com/selinatisha/react-weather-app">
-            Open-source code
-          </a>
-          by Selina Andersson
+          <span>
+            <a href="https://github.com/selinatisha/react-weather-app">
+              Open-source code
+            </a>
+          </span>
+          <span>
+            <p>by Selina Andersson</p>
+          </span>
         </footer>
       </div>
     </div>

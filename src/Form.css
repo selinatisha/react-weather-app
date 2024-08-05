@@ -28,6 +28,13 @@
 }
 
 .Form button:hover {
-  cursor: pointer;
   background-color: #fed8ff;
+}
+
+.Footer footer {
+  color: #fed8ff;
+}
+
+.Footer footer a {
+  color: #fed8ff;
 }
